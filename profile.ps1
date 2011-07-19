@@ -1,3 +1,7 @@
+. ./SearchFiles.ps1
+. ./GetHttp.ps1
+. ./SearchWeb.ps1
+. ./ExecSql.ps1
 
 function prompt
 {
