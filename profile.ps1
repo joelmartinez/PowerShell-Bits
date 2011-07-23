@@ -1,7 +1,7 @@
-. ./SearchFiles.ps1
-. ./GetHttp.ps1
-. ./SearchWeb.ps1
-. ./ExecSql.ps1
+. ~/documents/WindowsPowerShell/SearchFiles.ps1
+. ~/documents/WindowsPowerShell/GetHttp.ps1
+. ~/documents/WindowsPowerShell/SearchWeb.ps1
+. ~/documents/WindowsPowerShell/ExecSql.ps1
 
 function prompt
 {
