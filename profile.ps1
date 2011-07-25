@@ -1,6 +1,7 @@
 . ~/documents/WindowsPowerShell/SearchFiles.ps1
 . ~/documents/WindowsPowerShell/GetHttp.ps1
 . ~/documents/WindowsPowerShell/SearchWeb.ps1
+. ~/documents/WindowsPowerShell/ParseHtml.ps1
 . ~/documents/WindowsPowerShell/ExecSql.ps1
 
 function prompt
