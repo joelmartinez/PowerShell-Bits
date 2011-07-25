@@ -10,6 +10,11 @@ PS ~> get-http "http://google.com" | Parse-Html "//a" | select OuterHtml, @{Name
 .EXAMPLE
 You can also pipe html text directly from existing files.
 PS ~> gc .\goog.html | Parse-Html "//a" | select InnerHtml, @{Name="href";Expression={$_.Attributes["href"].Value}}
+.EXAMPLE
+Rudimentary 'browsers' can be created simply by parsing the HTML for the site in question and displaying the relevant content
+
+PS ~> $web = [system.reflection.assembly]::LoadWithPartialName("System.Web")
+PS ~> get-http "http://digg.com" | Parse-Html "//h3/a[text()]" | select @{Name="Title";Expression={[System.Web.HttpUtility]::HtmlDecode($_.innerhtml)}}, @{Name="Url";Expression={$_.Attributes["href"].Value}}
 #>
 function global:Parse-Html
 {
