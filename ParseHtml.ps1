@@ -15,6 +15,10 @@ Rudimentary 'browsers' can be created simply by parsing the HTML for the site in
 
 PS ~> $web = [system.reflection.assembly]::LoadWithPartialName("System.Web")
 PS ~> get-http "http://digg.com" | Parse-Html "//h3/a[text()]" | select @{Name="Title";Expression={[System.Web.HttpUtility]::HtmlDecode($_.innerhtml)}}, @{Name="Url";Expression={$_.Attributes["href"].Value}}
+.EXAMPLE
+This will retrieve a page of results from Bing, and output the Title, Url, and Description as a list of PSObjects
+
+PS ~> get-http http://bing.com/search?q=finance+industry | parse-html "//li[@class='sa_wr']/div" | select @{Name="Title";Expression={$_.SelectNodes("div/h3/a")[0].InnerHtml}},  @{Name="Url";Expression={$_.SelectNodes("div/h3/a")[0].Attributes["href"].Value}}, @{Name="Description";Expression={$_.SelectNodes("p")[0].InnerHtml}}
 #>
 function global:Parse-Html
 {
