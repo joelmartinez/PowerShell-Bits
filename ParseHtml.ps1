@@ -7,6 +7,9 @@ Uses the HtmlAgilityPack assembly to parse HTML in the pipeline and executes an 
 The xpath query to use
 .EXAMPLE
 PS ~> get-http "http://google.com" | Parse-Html "//a" | select OuterHtml, @{Name="href";Expression={$_.Attributes["href"].Value}}
+.EXAMPLE
+You can also pipe html text directly from existing files.
+PS ~> gc .\goog.html | Parse-Html "//a" | select InnerHtml, @{Name="href";Expression={$_.Attributes["href"].Value}}
 #>
 function global:Parse-Html
 {
