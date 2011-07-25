@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-Lets you execute XPath queries against 
+Lets you execute XPath queries against HTML
 .DESCRIPTION
 Uses the HtmlAgilityPack assembly to parse HTML in the pipeline and executes an XPath query against the parsed source.
 .PARAMETER xpath
