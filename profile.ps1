@@ -3,6 +3,8 @@
 . ~/documents/WindowsPowerShell/SearchWeb.ps1
 . ~/documents/WindowsPowerShell/ParseHtml.ps1
 . ~/documents/WindowsPowerShell/ExecSql.ps1
+. ~/documents/WindowsPowerShell/WriteBig.ps1
+. ~/documents/WindowsPowerShell/GetTextFromHtml.ps1
 
 function prompt
 {

@@ -32,8 +32,7 @@ function global:Concat-Text
     end
     {
         $val = $text.ToString() -replace "\s\s+"," "
-        write-host "   "
-        write-host $val
 
+        $val | Write-Big
     }
 }
