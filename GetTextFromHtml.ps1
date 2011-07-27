@@ -33,6 +33,6 @@ function global:Concat-Text
     {
         $val = $text.ToString() -replace "\s\s+"," "
 
-        $val | Write-Big
+        Write-Big $val
     }
 }

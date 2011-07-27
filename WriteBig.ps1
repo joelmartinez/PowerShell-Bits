@@ -1,9 +1,9 @@
 function global:Write-Big
 {
-    param([string]$url)
+    param([string]$val)
     $file = [System.IO.Path]::GetTempFileName()
     
-    $_ | Out-File $file
+    $val | Out-File $file
 
     $oldEncoding = $OutputEncoding
     $OutputEncoding = [Console]::OutputEncoding
