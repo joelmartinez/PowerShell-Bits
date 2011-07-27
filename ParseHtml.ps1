@@ -53,8 +53,7 @@ function global:Parse-Html
 
     {
     
-    $location = get-location
-
+    $location = Resolve-Path ~/Documents/WindowsPowerShell
         $location = "$location\dependencies\HtmlAgilityPack.dll"
 
         $assembly = [system.reflection.assembly]::LoadFile($location)

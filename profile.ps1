@@ -26,3 +26,4 @@ function elevate-process
 }
 
 set-alias sudo elevate-process;
+set-alias get get-http;
