@@ -1,3 +1,7 @@
+<#
+.EXAMPLE
+PS ~> get http://digg.com | parse-html "//h3" | Get-TextFromHtml | Concat-Text
+#>
 function global:Get-TextFromHtml
 {
     begin
