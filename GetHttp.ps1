@@ -6,6 +6,9 @@ function global:Get-Http
     #$assembly = [Reflection.Assembly]::LoadWithPartialName("System.Web.Extensions")
     $client = New-Object System.Net.WebClient
     $result = $client.DownloadString($url)
+    
+    $previousEncoding = $OutputEncoding
+    $OutputEncoding = [Console]::OutputEncoding
 
     if (!$pipe) {
         write-output $result
@@ -17,4 +20,6 @@ function global:Get-Http
             write-output $lines[$i]
         }
     }
+
+    $OutputEncoding = $previousEncoding
 }
