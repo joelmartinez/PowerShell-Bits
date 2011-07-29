@@ -14,13 +14,15 @@ function global:Get-TextFromHtml
         {
             $after = $false
             
-            if ($_.Name -eq "br" -or $_.Name -eq "p")
+            if ($_.Name -eq "br" -or $_.Name -eq "p" -or $_.Name -eq "div" -or $_.Name -eq "tr")
             {
+		# content line breaks
                 write-output "[br]"
             }
             
             if ($_.Name -eq "h1" -or $_.Name -eq "h2" -or $_.Name -eq "h3" -or $_.Name -eq "h4" -or $_.Name -eq "h5" -or $_.Name -eq "h6")
             {
+		# headers, sets the after flag so that it breaks before and after
                 write-output "[br]"
                 $after = $true
             }
@@ -57,6 +59,7 @@ function global:Concat-Text
     end
     {
         $val = $text.ToString() -replace "\s\s+"," "
+        $val = $val -replace "(\[br\]\s+)(\[br\]\s)+","[br]"
         $val = $val -replace "\[br\]",[System.Environment]::NewLine
 
         Write-Big $val
