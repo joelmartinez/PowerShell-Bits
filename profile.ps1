@@ -27,5 +27,9 @@ function elevate-process
     $runningProcess = [System.Diagnostics.Process]::Start($psi);
 }
 
+$env:Path += ";c:\program files\sublime text 2";
+$env:Path += ";C:\Windows\Microsoft.NET\Framework\v4.0.30319";
+
 set-alias sudo elevate-process;
 set-alias get get-http;
+set-alias sublime sublime_text.exe;
