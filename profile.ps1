@@ -5,6 +5,7 @@
 . ~/documents/WindowsPowerShell/ExecSql.ps1
 . ~/documents/WindowsPowerShell/WriteBig.ps1
 . ~/documents/WindowsPowerShell/GetTextFromHtml.ps1
+. ~/documents/WindowsPowerShell/GetAndroidRank.ps1
 
 function prompt
 {
